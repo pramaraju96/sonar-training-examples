@@ -30,7 +30,6 @@
               "src/styles.scss"
             ],
             "scripts": []
-            // "es5BrowserSupport": true
           },
           "configurations": {
             "production": {
@@ -91,6 +90,15 @@
               "src/assets"
             ]
           }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "src/**/*.ts",
+              "src/**/*.html"
+            ]
+          }
         }
       }
     },
@@ -114,5 +122,8 @@
       }
     }
   },
-  "defaultProject": "angular-example"
+  "defaultProject": "angular-example",
+  "cli": {
+    "defaultCollection": "@angular-eslint/schematics"
+  }
 }

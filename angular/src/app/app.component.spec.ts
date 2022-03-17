@@ -1,4 +1,10 @@
-import {TestBed, waitForAsync, ComponentFixture, fakeAsync, tick} from '@angular/core/testing';
+import {
+  ComponentFixture,
+  TestBed,
+  fakeAsync,
+  tick,
+  waitForAsync
+} from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 
@@ -7,8 +13,9 @@ describe('AppComponent', () => {
   let fixture: ComponentFixture<AppComponent>;
 
   beforeAll(() => {
-    window.onbeforeunload = () => 'Set this so that you don\'t get' +
-        '"Some of your tests did a full page reload!!" error';
+    window.onbeforeunload = () =>
+      "Set this so that you don't get" +
+      '"Some of your tests did a full page reload!!" error';
   });
 
   beforeEach(waitForAsync(() => {
@@ -16,10 +23,12 @@ describe('AppComponent', () => {
       imports: [RouterTestingModule],
       declarations: [AppComponent],
       providers: []
-    }).compileComponents().then(() => {
-      fixture = TestBed.createComponent(AppComponent);
-      component = fixture.componentInstance;
-    });
+    })
+      .compileComponents()
+      .then(() => {
+        fixture = TestBed.createComponent(AppComponent);
+        component = fixture.componentInstance;
+      });
   }));
 
   it(`should have as title 'angular-example'`, () => {
@@ -32,7 +41,9 @@ describe('AppComponent', () => {
     // const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Welcome to angular-example!');
+    expect(compiled.querySelector('h1').textContent).toContain(
+      'Welcome to angular-example!'
+    );
   });
 
   it('should do stuff', fakeAsync(() => {
@@ -45,10 +56,10 @@ describe('AppComponent', () => {
 
   it('should do other stuff', fakeAsync(() => {
     spyOn(component, 'doOtherStuff').and.callThrough();
-    const anchor = fixture.debugElement.nativeElement.querySelector('a#doOtherStuff');
+    const anchor =
+      fixture.debugElement.nativeElement.querySelector('a#doOtherStuff');
     anchor.click();
     tick();
     expect(component.doOtherStuff).toHaveBeenCalled();
   }));
-
 });

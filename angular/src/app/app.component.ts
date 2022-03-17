@@ -15,6 +15,11 @@ export class AppComponent {
   }
 
   doOtherStuff() {
+    const name = "français!"
     alert('I did other stuff');
+  }
+
+  unusedMethodExample() {
+    const myArray = [1, 2, 3];
   }
 }
