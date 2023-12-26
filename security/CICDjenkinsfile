@@ -24,7 +24,7 @@ pipeline {
 			steps {
 				dir('security') {
 				    checkout scm
-					sh 'mvn -B -DskipTests clean compile
+				    sh 'mvn -B -DskipTests clean compile'
 				}
 				
 			}
