@@ -22,7 +22,11 @@ pipeline {
 	stages {
 		stage('Build') {
 			steps {
-				sh 'mvn -B -DskipTests clean compile'
+				dir('security') {
+				    checkout scm
+					sh 'mvn -B -DskipTests clean compile
+				}
+				
 			}
 		}
 
