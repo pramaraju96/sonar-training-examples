@@ -36,21 +36,6 @@ stage('Test') {
 				    sh 'mvn test'
 				}
     }
-/*
-    post {
-        always {
-            script {
-                def testReportFiles = findFiles(glob: '**/target/surefire-reports/*.xml')
-
-                if (testReportFiles) {
-                    junit "**/target/surefire-reports/*.xml"
-                } else {
-                    echo "No test report files found. Skipping JUnit step."
-                }
-            }
-        }
-    }
-*/
 }
 
 
