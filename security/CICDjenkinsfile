@@ -37,7 +37,7 @@ pipeline {
 		}
 	    }
 	    post {
-	        always {
+	        changed {
 	            script {
 	                def testReportFiles = findFiles(glob: '**/target/surefire-reports/*.xml')
 	
