@@ -36,6 +36,7 @@ stage('Test') {
 				    sh 'mvn test'
 				}
     }
+/*
     post {
         always {
             script {
@@ -49,6 +50,7 @@ stage('Test') {
             }
         }
     }
+*/
 }
 
 
