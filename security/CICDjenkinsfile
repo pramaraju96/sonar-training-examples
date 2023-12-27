@@ -66,7 +66,7 @@ stage('Test') {
 				        "repositoryName": "${repoName}"
 				    }
 				],
-				"branchName": "main"
+				"branchName": "sonar-patch-2"
 				}""")
 			}     
 		}
@@ -130,7 +130,7 @@ stage('Test') {
 							    "repositoryName": "${repoName}"
 							}
 						    ],
-						    "branchName": "main"
+						    "branchName": "sonar-patch-2"
 						}""")
 						script {
 							package1 = true
@@ -152,7 +152,7 @@ stage('Test') {
 							    "repositoryName": "${repoName}"
 							}
 						    ],
-						    "branchName": "main"
+						    "branchName": "sonar-patch-2"
 						}""")
 						script {
 							package2 = true
@@ -207,6 +207,7 @@ def sonarSummaries() {
 		    -Dsonar.token=1926d793f92181dd0ac406335d4d4bea392a3023 \
 		    -Dsonar.host.url=https://sonarcloud.io \
 		    -Dsonar.organization=pramaraju96 \
-		    -Dsonar.projectKey=pramaraju96_sonar-training-examples'
+		    -Dsonar.projectKey=pramaraju96_sonar-training-examples' \
+		    -Dsonar.branch.name=sonar-patch-2
     }
 }
